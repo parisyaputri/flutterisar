@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
 
   // write data
     void writeData() {
-      _myBox.put(2, 'John');
+      _myBox.put(2, 'michelle');
     }
 
   // read data
