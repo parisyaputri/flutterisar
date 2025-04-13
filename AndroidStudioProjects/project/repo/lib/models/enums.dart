@@ -1,5 +1,5 @@
  enum Status{
-  connected,
+  completed,
    pending,
    inProgress,
  }

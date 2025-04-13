@@ -105,7 +105,7 @@ Todo _todoDeserialize(
   object.createdAt = reader.readDateTime(offsets[1]);
   object.id = id;
   object.status = _TodostatusValueEnumMap[reader.readByteOrNull(offsets[2])] ??
-      Status.connected;
+      Status.completed;
   object.updatedAt = reader.readDateTime(offsets[3]);
   return object;
 }
@@ -123,7 +123,7 @@ P _todoDeserializeProp<P>(
       return (reader.readDateTime(offset)) as P;
     case 2:
       return (_TodostatusValueEnumMap[reader.readByteOrNull(offset)] ??
-          Status.connected) as P;
+          Status.completed) as P;
     case 3:
       return (reader.readDateTime(offset)) as P;
     default:
@@ -132,12 +132,12 @@ P _todoDeserializeProp<P>(
 }
 
 const _TodostatusEnumValueMap = {
-  'connected': 0,
+  'completed': 0,
   'pending': 1,
   'inProgress': 2,
 };
 const _TodostatusValueEnumMap = {
-  0: Status.connected,
+  0: Status.completed,
   1: Status.pending,
   2: Status.inProgress,
 };
